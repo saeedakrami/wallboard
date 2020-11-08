@@ -1,13 +1,364 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: IRANSansFaNum;
+    font-style: normal;
+    font-weight: normal;
+    src: url("./fonts/IRANSansWeb\(FaNum\).eot");
+    src: url("./fonts/IRANSansWeb\(FaNum\).eot?#iefix") format("embedded-opentype"), url("./fonts/IRANSansWeb\(FaNum\).woff2") format("woff2"), url("./fonts/IRANSansWeb\(FaNum\).woff") format("woff"), url("./fonts/IRANSansWeb\(FaNum\).ttf") format("truetype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: IRANSansFaNum;
+    font-style: normal;
+    font-weight: bold;
+    src: url("./fonts/IranSansFa/IRANSans-Medium-web.eot");
+    src: url("./fonts/IranSansFa/IRANSans-Medium-web.eot?#iefix") format("embedded-opentype"), url("./fonts/IranSansFa/IRANSans-Medium-web.woff2") format("woff2"), url("./fonts/IranSansFa/IRANSans-Medium-web.woff") format("woff"), url("./fonts/IranSansFa/IRANSans-Medium-web.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(29, 44, 63);
+    direction: rtl;
+    font-family: IRANSansFaNum;
+    font-size: 16px;
+    display: flex;
+}
+
+.container {
+    height: calc(100vh - 40px);
+    width: calc(100vw - 40px);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    color: rgba(255, 255, 255, 0.7);
+    width: calc(50% - 5px);
+    height: 135px;
+    text-align: center;
+    padding: 0;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.col-1 {
+    width: 8.3333333334%;
+    padding: 0 10px;
+}
+
+.col-2 {
+    width: 16.6666666667%;
+    padding: 0 10px;
+}
+
+.col-3 {
+    width: 25%;
+    padding: 0 10px;
+}
+
+.col-4 {
+    width: 33.3333333334%;
+    padding: 0 10px;
+}
+
+.col-5 {
+    width: 41.6666666667%;
+    padding: 0 10px;
+}
+
+.col-6 {
+    width: 50%;
+    padding: 0 10px;
+}
+
+.col-7 {
+    width: 58.3333333334%;
+    padding: 0 10px;
+}
+
+.col-8 {
+    width: 66.6666666667%;
+    padding: 0 10px;
+}
+
+.col-9 {
+    width: 75%;
+    padding: 0 10px;
+}
+
+.col-10 {
+    width: 83.3333333334%;
+    padding: 0 10px;
+}
+
+.col-11 {
+    width: 91.6666666667%;
+    padding: 0 10px;
+}
+
+.col-12 {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.time {
+    color: #c67025;
+    height: 40px;
+    text-align: end;
+    font-size: 22px;
+}
+
+.calls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    height: 250px;
+}
+
+.callsDetail {
+    background-color: rgba(0, 0, 0, 0.2);
+    min-width: calc(50% - 5px);
+    height: 100px;
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.callsText,
+.callsNumber {
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+}
+
+.callsText {
+    font-size: 14px;
+}
+
+.callsNumber {
+    font-size: 32px;
+}
+
+.queueNumber {
+    color: #f39c12;
+}
+
+.redNumber {
+    color: #e74c3c;
+}
+
+.greenNumber {
+    color: #19bd3f;
+}
+
+.slaCallsChart {
+    width: 100%;
+    height: 210px;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.slaCallsChartTitle {
+    color: #5f6d74;
+    width: 100%;
+    text-align: end;
+    padding-left: 10px;
+    position: absolute;
+}
+
+.shadow {
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .4));
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .4));
+    position: absolute;
+    top: 25px;
+}
+
+.slaChartText {
+    font-size: 28px;
+}
+
+.answerAndRejectChart {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 210px;
+    padding: 4px 12px;
+}
+
+.answerAndRejectChartTitle {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.chartTitle {
+    color: #5f6d74;
+}
+
+.guide {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.answerGuide,
+.rejectGuide {
+    border-radius: 4px;
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+}
+
+.answerGuide {
+    background-color: #42f760;
+}
+
+.rejectGuide {
+    background-color: #e74c3c;
+}
+
+.guideTitle {
+    color: #5f6d74;
+    font-size: 12px;
+}
+
+.answerTooltip,
+.rejectTooltip,
+.answerTooltipText,
+.rejectTooltipText {
+    display: none;
+}
+
+.answerTooltip.show,
+.rejectTooltip.show,
+.answerTooltipText.show,
+.rejectTooltipText.show {
+    display: block;
+}
+
+.answerCircle,
+.rejectCircle {
+    display: none;
+}
+
+.answerCircle.show,
+.rejectCircle.show {
+    display: block;
+}
+
+.queuesDetails {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    padding: 4px 12px;
+    position: relative;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+.colorWhite {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.queuesDetailsRow {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.queuesDetailsRow>.range {
+    flex: auto;
+}
+
+.allCallsRange {
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+
+.queuesCallsRange {
+    height: 5px;
+    border-radius: 2px;
+}
+
+.queuesDetailsName {
+    min-width: 95px;
+}
+
+.queuesDetailsNumber {
+    min-width: 25px;
+    text-align: end;
+}
+
+.timeTitle {
+    font-size: 12px;
+}
+
+.timeValue {
+    font-size: 28px;
+    direction: ltr;
+}
+
+.personValue {
+    font-size: 28px;
+    color: #80d6fc;
+}
+
+.timeValue.last {
+    color: #ff9e00;
+}
+
+.timeValue.average {
+    color: #e67e22;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.chartPath {
+    animation: drawPath 1s linear;
+}
+
+@keyframes drawPath {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.queueCharts {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+}
+
+.legendColorGuide {
+    border-radius: 4px;
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+    display: inline-block;
 }

@@ -1,0 +1,27 @@
+{
+    "successful": "true",
+    "result": {
+        "Ordinary": {
+            "Total Calls": 176,
+            "Connected": 170,
+            "Disconnected": 6,
+            "Queue": 0,
+            "Avg Wait Time": 15,
+            "last Person Wait Time": 0,
+            "Max Wait Time": 127,
+            "SLA": 1.0,
+            "Updated": "2020-10-18T15:08:54.000Z"
+        },
+        "Total": {
+            "Total Calls": 176,
+            "Connected": 170,
+            "Disconnected": 6,
+            "Queue": 0,
+            "Avg Wait Time": 15,
+            "last Person Wait Time": 0,
+            "Max Wait Time": 127,
+            "SLA": 0.17,
+            "Updated": "2020-10-18T15:08:54.000Z"
+        }
+    }
+}
